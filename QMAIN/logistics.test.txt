@@ -1,0 +1,49 @@
+import React from "react";
+import { configure, shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+import IncidentLogistics from "../../../../components/environment/screens/IncidentLogistics";
+import { reportStore } from "../../../../store/report.store";
+
+configure({ adapter: new Adapter() });
+
+describe("<IncidentLogistics />", () => {
+  /*const store = {
+    reportList: [
+      {
+        incident: { id: "1", date: "12-02-2019", time: "01:38" },
+        isComplete: false
+      }
+    ],
+    isComplete: false,
+    time: "bob",
+    late: false,
+    date: "false",
+    progressIncident: 0
+  };*/
+
+  /*it("renders correctly", () => {
+    const wrapper = shallow(<IncidentLogistics reportStore={reportStore} />);
+  });*/
+
+  it("tests the progress bar with DatePicker", () => {
+    const date: [string, number] = ["2019-02-18", 50];
+    reportStore.date = date;
+    const wrapper = shallow(<IncidentLogistics reportStore={reportStore} />);
+    const DatePicker = wrapper.find("PickerWrapper");
+    DatePicker.simulate("change");
+    expect(DatePicker).not.toEqual(date);
+  });
+
+  it("tests the progress bar with TimePicker", () => {
+    const time: [string, number] = ["03:11", 50];
+    const wrapper = shallow(<IncidentLogistics reportStore={reportStore} />);
+    const TimePicker = wrapper.find("TimePicker");
+    TimePicker.simulate("change");
+    expect(TimePicker).not.toEqual(time);
+  });
+
+  /*it('renders snapshots', () => {
+        const wrapper = shallow(<IncidentLogistics/>);
+        expect(wrapper).toMatchSnapshot();
+    })*/
+});

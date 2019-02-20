@@ -1,0 +1,36 @@
+CREATE TABLE incident(
+	id SERIAL PRIMARY KEY,
+	date TEXT,
+	time TEXT,
+	details TEXT,
+	basicDetails INTEGER,
+	moreDetails INTEGER);
+
+CREATE TABLE basicDetails(
+	id SERIAL PRIMARY KEY,
+	environmental BOOLEAN,
+	category TEXT,
+	subCategory TEXT,
+	site INTEGER
+);
+
+CREATE TABLE site(
+	id SERIAL PRIMARY KEY,
+	siteName TEXT,
+	contract TEXT,
+	subCategory TEXT,
+	locationDescription TEXT,
+	safeToReturn BOOLEAN
+);
+
+CREATE TABLE moreDetails(
+	id SERIAL PRIMARY KEY,
+	investigator TEXT,
+	blueLight BOOLEAN,
+	reportedTo TEXT,
+	potentialGreaterSeverity BOOLEAN,
+	personInjured BOOLEAN,
+	personTreatedByFirstAider BOOLEAN,
+	personFitToReturnToWork BOOLEAN,
+	immediateAction TEXT
+);

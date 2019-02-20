@@ -1,0 +1,13 @@
+FROM golang:1.11-alpine AS build
+RUN apk --no-cache add gcc g++ make ca-certificates
+
+COPY . $GOPATH/src/github.com/IbrahimKoutabli/report-service/
+WORKDIR $GOPATH/src/github.com/IbrahimKoutabli/report-service/
+
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o /go/bin/svc
+
+FROM scratch
+WORKDIR /
+COPY --from=build /go/bin/svc /svc
+EXPOSE 8081
+CMD ["./svc"]

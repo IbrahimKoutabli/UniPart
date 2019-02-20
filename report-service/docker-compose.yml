@@ -1,0 +1,25 @@
+version: "3.3"
+
+services:
+  report-service:
+    build:
+      context: "."
+      dockerfile: "./dockerfile"
+    depends_on:
+      - "report-db"
+    environment:
+      DATABASE_URL: "postgres://test:password@0.0.0.0:5432/testdb?sslmode=disable"
+
+    ports:
+      - "8888:8888"
+  report-db:
+    build:
+      context: "."
+      dockerfile: "./db.dockerfile"
+    environment:
+      POSTGRES_DB: "testdb"
+      POSTGRES_USER: "test"
+      POSTGRES_PASSWORD: "password"
+    ports:
+      - "5432:5432"
+    restart: "unless-stopped"
