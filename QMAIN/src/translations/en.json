@@ -1,4 +1,37 @@
 {
-    "app.logistics.late": "Reported late?",
-    "app.details.environmental": "Environmentalz"
+  "app.save": "Save",
+  "app.language": "Language",
+  "app.complete": "Complete",
+  "app.cancel": "Cancel",
+  "app.reset": "Reset",
+  "app.back": "Back",
+  "app.next": "Next",
+
+  "app.incidentLogistics.title": "Incident logistics",
+  "app.incidentLogistics.late": "Reported late ?",
+  "app.incidentLogistics.date": "Date of incident",
+  "app.incidentLogistics.time": "Time of incident",
+  "app.incidentLogistics.reason": "Reason for being late ?",
+
+  "app.basicDetails.title": "Basic details",
+  "app.basicDetails.environmental": "Environmental",
+  "app.basicDetails.health": "Health & Safety",
+  "app.basicDetails.type": "Incident type",
+  "app.basicDetails.category": "Category",
+  "app.basicDetails.subCategory": "Sub-Category",
+  "app.basicDetails.site": "Site",
+  "app.basicDetails.contract": "Contract",
+  "app.basicDetails.location": "Location",
+  "app.basicDetails.locationDescription": "Location description",
+  "app.basicDetails.safe": "Incident area safe to return to work ?",
+
+  "app.moreDetails.title": "More details",
+  "app.moreDetails.investigator": "Investigator",
+  "app.moreDetails.reportedTo": "Who was the incident reported to ?",
+  "app.moreDetails.blueLight": "Blue light ?",
+  "app.moreDetails.severity": "Potential for greater severity ?",
+  "app.moreDetails.injured": "Person injured ?",
+  "app.moreDetails.treated": "Person treated by first aider ?",
+  "app.moreDetails.work": "Person fit to return to work ?",
+  "app.moreDetails.action": "Immediate actions required ?"
 }

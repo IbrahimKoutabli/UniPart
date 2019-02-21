@@ -27,50 +27,8 @@ interface Props {
 @inject("reportStore")
 @observer
 export default class MoreDetails extends React.Component<Props> {
-  // state: State = {
-  //   input: [
-  //     {
-  //       id: "investigator",
-  //       value: false
-  //     },
-  //     {
-  //       id: "report",
-  //       value: false
-  //     }
-  //   ]
-  // };
-  // updateInput = (input: string, value: number) => {
-  //   const array = [...this.state.input];
-  //   for (const i in array) {
-  //     if (array[i].id === input) {
-  //       console.log("here");
-  //       if (value <= 0 && array[i].value) {
-  //         array[i].value = false;
-  //         this.setState({
-  //           input: array
-  //         });
-  //         console.log(this.state.input);
-  //         return false;
-  //       }
-  //       if (value > 0 && !array[i].value) {
-  //         array[i].value = true;
-  //         this.setState({
-  //           input: array
-  //         });
-  //         return true;
-  //       }
-  //     }
-  //   }
-  //   return null;
-  // };
-  // progressHandler = (bool: any) => {
-  //   if (bool !== true && bool !== false) {
-  //     return;
-  //   }
-  //   const value = 100 / this.props.details.inputs;
-  //   this.props.changeProgress(this.props.details.id, bool ? value : -value);
-  // };
-  dataSource = ["Investigator 1", "Investigator 2", "Investigator 3"];
+
+  dataSource = ["Investigator 1", "Investigator 2", "Investigator 3"]; // should be moved to data
   dataSource1 = ["Reportee 1", "Reportee 2", "Reportee 3"];
 
   setSeverity = () => this.props.reportStore.moreDetails.setSeverity();
@@ -95,7 +53,7 @@ export default class MoreDetails extends React.Component<Props> {
           style={{ display: "flex", flexDirection: "column", padding: "20px" }}
         >
           <Title text="More details" />
-          <div style={{ display: "flex", marginBottom: "150px" }}>
+          <div style={{ display: "flex", marginBottom: "70px" }}>
             <AutoComplete
               placeholder="Investigator"
               dropdownStyle={{ width: 300 }}
@@ -126,7 +84,6 @@ export default class MoreDetails extends React.Component<Props> {
               />
             </AutoComplete>
           </div>
-          {/* <div style={{display:"flex", flexWrap:"wrap"}}>  */}
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <ToggleButton
               text="Blue light ?"

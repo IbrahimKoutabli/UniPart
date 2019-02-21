@@ -4,8 +4,8 @@ import { observer, inject } from "mobx-react";
 import { configure } from "mobx";
 
 import Title from "../layout/Title";
-// // import { navbarItems } from "../../../data/data";
 import tabs from "../tabs/tabs";
+
 configure({ enforceActions: true });
 
 const TabPane = Tabs.TabPane;
