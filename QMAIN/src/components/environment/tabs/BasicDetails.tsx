@@ -133,7 +133,7 @@ export default class BasicDetails extends React.Component<Props> {
             <AutoComplete
               dataSource={tabs.BASIC_DETAILS_TAB.siteType}
               style={{ width: 300 }}
-              placeholder={"Site"}
+              placeholder="Site"
               onSelect={this.handleSelect}
               onSearch={this.handleSearch}
               disabled={true}

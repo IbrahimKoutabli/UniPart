@@ -1,0 +1,47 @@
+schema {
+    query: Query
+}
+
+type Mutation {
+    addIncident(incident: Incident!): Incident
+}
+
+type Query {
+    getIncident(id: ID!): Incident
+}
+
+type Incident {
+    id: ID!
+    date: String!
+    time: String!
+    details: String!
+    basicDetails: BasicDetails!
+    moreDetails: MoreDetails!
+}
+
+type BasicDetails {
+    environmental: Boolean!
+    incidentType: String!
+    category: String!
+    subCategory: String!
+    site: Site!
+}
+
+type Site {
+    siteName: String!
+    contract: String!
+    subCategory: String!
+    locationDescription: String!
+    safeToReturn: Boolean!
+}
+
+type MoreDetails {
+    investigator: String!
+    blueLight: Boolean!
+    reportedTo: String!
+    potentialGreaterSeverity: Boolean!
+    personInjured: Boolean!
+    personTreatedByFirstAider: Boolean!
+    personFitToReturnToWork: Boolean!
+    immediateAction: String!
+}

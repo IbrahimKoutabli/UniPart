@@ -31,9 +31,9 @@ class ReportScreen extends React.Component<Props> {
       <Layout>
         <div>
           <Title
-            title={"Title of Report"}
-            subTitle={" (IRN: Will autogenerate a number once saved)"}
-            complete = {this.props.reportStore.isComplete}
+            title="Title of Report"
+            subTitle="(IRN: Will autogenerate a number once saved)"
+            complete={this.props.reportStore.isComplete}
           />
           <Tabs activeKey={currentTab} onChange={this.onChangeTab}>
             {Object.keys(tabs).map(tab => {
