@@ -6,11 +6,9 @@ import { configure } from "mobx";
 // import { FormattedMessage} from 'react-intl';
 import NavigationButtons from "../../organisms/NavigationButtons";
 import Title from "../../organisms/Title";
-// import DropdownList from "../../organisms/DropdownList";
-import DropdownList1 from "../../organisms/DropdownList1";
+import DropDownList from "../../organisms/DropdownList";
 import RadioGroup from "../../organisms/RadioGroup";
 import ToggleButton from "../../organisms/ToggleButton";
-// import { reportStore } from "src/store/report.store";
 
 import tabs from "../tabs/tabs";
 
@@ -35,9 +33,7 @@ const DropdownListContainer = Styled.div({
 });
 
 interface Props {
-  details: any;
   progress: number;
-  changeProgress(id: string, value: number): void;
   nextTab: string;
   prevTab: string;
   next: boolean;
@@ -48,11 +44,6 @@ interface Props {
 @inject("reportStore")
 @observer
 export default class BasicDetails extends React.Component<Props> {
- state = {
-        name       : 'Eric',
-        unreadCount: 1000,
-    };
-
   handleChangeIncident = (value: any) =>
     this.props.reportStore.basicDetails.setIncidentType(value);
 
@@ -79,7 +70,7 @@ export default class BasicDetails extends React.Component<Props> {
     identifier: string,
     option: { props: { text: string; type: string } }
   ) => {
-    console.log( identifier, option);
+    console.log(identifier, option);
   };
 
   render() {
@@ -98,8 +89,8 @@ export default class BasicDetails extends React.Component<Props> {
         <InputsContainer>
           <Title text="Basic details" />
           <InnerContainer>
-            <RadioGroup /*select={reportStore.setRadio*/ />
-            <DropdownList1
+            <RadioGroup />
+            <DropDownList
               placeholder="Incident type"
               options={tabs.BASIC_DETAILS_TAB.incidentType}
               selected={reportStore.basicDetails.incidentType[0]}
@@ -109,7 +100,7 @@ export default class BasicDetails extends React.Component<Props> {
             />
           </InnerContainer>
           <DropdownListContainer>
-            <DropdownList1
+            <DropDownList
               selected={reportStore.basicDetails.categoryType[0]}
               options={tabs.BASIC_DETAILS_TAB.categoryType}
               placeholder="Category"
@@ -117,7 +108,7 @@ export default class BasicDetails extends React.Component<Props> {
                 reportStore.basicDetails.setCategoryHandler(val)
               }
             />
-            <DropdownList1
+            <DropDownList
               selected={reportStore.basicDetails.subCategoryType[0]}
               handler={(val: any) =>
                 reportStore.basicDetails.setSubCategoryHandler(val)
@@ -133,7 +124,7 @@ export default class BasicDetails extends React.Component<Props> {
             <AutoComplete
               dataSource={tabs.BASIC_DETAILS_TAB.siteType}
               style={{ width: 300 }}
-              placeholder={"Site"}
+              placeholder="Site"
               onSelect={this.handleSelect}
               onSearch={this.handleSearch}
               disabled={true}
@@ -148,7 +139,7 @@ export default class BasicDetails extends React.Component<Props> {
             />
           </InnerContainer>
           <DropdownListContainer>
-            <DropdownList1
+            <DropDownList
               selected={reportStore.basicDetails.locationType[0]}
               handler={(val: any) =>
                 reportStore.basicDetails.setLocationHandler(val)
@@ -156,7 +147,7 @@ export default class BasicDetails extends React.Component<Props> {
               placeholder="Location"
               options={tabs.BASIC_DETAILS_TAB.locationType}
             />
-            
+
             <TextArea
               style={{ width: "300px" }}
               rows={4}

@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package grpc;
+
+message Incident {
+	int32 id = 1;
+	string date = 2;
+    string time = 3;
+    string details = 4;
+    BasicDetails basicDetails = 5;
+    MoreDetails moreDetails = 6;
+
+	message BasicDetails {
+		bool environmental = 1;
+		string incidentType = 2;
+		string category = 3;
+		string subCategory = 4;
+        Site site = 5;
+
+        message Site {
+            string siteName = 1;
+            string contract = 2;
+            string subCategory = 3;
+            string locationDescription = 5;
+            bool safeToReturn = 6;
+        }
+    }
+
+    message MoreDetails {
+        string investigator = 1;
+        bool blueLight = 2;
+        string reportedTo = 3;
+        bool potentialGreaterSeverity = 4;
+        bool personInjured = 5;
+        bool personTreatedByFirstAider = 6;
+        bool personFitToReturnToWork = 7;
+        string immediateAction = 8;
+    }
+}
+
+message Id{
+	int32 id = 1;
+}
+
+service IncidentReport {
+    rpc GetIncident(Id) returns(Incident) {}
+    rpc AddIncident(Incident) returns(Incident) {}
+}

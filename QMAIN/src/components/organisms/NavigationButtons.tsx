@@ -14,13 +14,6 @@ interface NavigationProps extends RouteComponentProps {
   reportStore?: ReportStore;
 }
 
-interface State {
-  showCancel: boolean;
-  showReset: boolean;
-}
-// interface TodoAddProps {
-//   reportStore?: ReportStore
-// }
 
 const StyledContainer = Styled.div({
   padding: "20px"
@@ -28,15 +21,10 @@ const StyledContainer = Styled.div({
 
 @inject("reportStore")
 @observer
-class NavigationButtons extends Component<NavigationProps, State> {
-  // @observable private incident: Incident;
-  state = {
-    showCancel: false,
-    showReset: false
-  };
+class NavigationButtons extends Component<NavigationProps> {
+
   handleAddTodo = () => {
-    // this.props.reportStore.addTodo({id:"bob",date:"j",time:"e"})
-    // this.incident = ''
+    // this.props.reportStore.addTodo({id:"bob",date:"Today",time:"now"})
   };
   navigateTo = (url: string) => {
     const { history } = this.props;

@@ -1,0 +1,37 @@
+{
+  "app.save": "Enregister",
+  "app.language": "Langage",
+  "app.complete": "Completer",
+  "app.cancel": "Annuler",
+  "app.reset": "Réinitialiser",
+  "app.back": "Précédent",
+  "app.next": "Suivant",
+
+  "app.incidentLogistics.title": "Logistique des incidents",
+  "app.incidentLogistics.late": "Rapporté en retard ?",
+  "app.incidentLogistics.date": "Date de l'incident",
+  "app.incidentLogistics.time": "Heure de l'incident",
+  "app.incidentLogistics.reason": "Raison du retard ?",
+
+  "app.basicDetails.title": "Détails de base",
+  "app.basicDetails.environmental": "Environnemental",
+  "app.basicDetails.health": "Santé et sécurité",
+  "app.basicDetails.type": "Type de l'incident",
+  "app.basicDetails.category": "Categorie",
+  "app.basicDetails.subCategory": "Sous Categorie",
+  "app.basicDetails.site": "Site",
+  "app.basicDetails.contract": "Contrat",
+  "app.basicDetails.location": "Emplacement",
+  "app.basicDetails.locationDescription": "Description de l'emplacement",
+  "app.basicDetails.safe": "Zone de travail sûre ?",
+
+  "app.moreDetails.title": "Plus de détails",
+  "app.moreDetails.investigator": "Investigateur",
+  "app.moreDetails.reportedTo": "Incident rapporté à ?",
+  "app.moreDetails.blueLight": "Lumière bleue ?",
+  "app.moreDetails.severity": "Potential for greater severity ?",
+  "app.moreDetails.injured": "Individu blessée ?",
+  "app.moreDetails.treated": "Individu ayant reçu les premiers soins ?",
+  "app.moreDetails.work": "Individu apte à retourner travailler ?",
+  "app.moreDetails.action": "Actions immédiates requises ?"
+}

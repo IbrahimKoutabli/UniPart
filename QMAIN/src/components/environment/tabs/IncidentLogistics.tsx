@@ -75,7 +75,7 @@ export default class IncidentLogistics extends React.Component<Props> {
             <TimePicker // once clicked, no easy way to clear other than manually clicking X
               style={{ margin: "10px", width: "150px" }}
               placeholder="Time of incident"
-              format={"HH:mm"}
+              format="HH:mm"
               onChange={this.timeChange}
             />
           </TimeInputs>

@@ -60,12 +60,11 @@ export class AppsWrapper extends React.Component {
           style={menuStyle}
           defaultSelectedKeys={["title-of-report"]}
         >
-          <StyledItem key={"3"}>{"Logo"}</StyledItem>
+          <StyledItem key="3">Logo</StyledItem>
           <Menu.Item key="2">
             <Link to="/create-report/incident">
               <Icon type="desktop" />
               <span>CREATE A REPORT</span>
-              
             </Link>
           </Menu.Item>
 

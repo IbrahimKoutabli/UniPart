@@ -36,23 +36,6 @@ const ButtonStyle = styled.div({
 });
 
 const completeHandler = async () => {
-  // try {
-  //   await createRequiredDocumentsMutation(requiredDocuments);
-  //   onDismissModal();
-
-  //   notification.success({
-  //     message: t("notificationSuccessTitle"),
-  //     description: t(`Requirement successfully created`)
-  //   });
-
-  //   await client.reFetchObservableQueries();
-  // } catch (error) {
-  //   notification.error({
-  //     message: t("notificationErrorTitle"),
-  //     description: t("Error creating requirement")
-  //   });
-  // }
-
   const addReportData = {
     safe: false
   };

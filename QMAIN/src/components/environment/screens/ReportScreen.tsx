@@ -4,8 +4,8 @@ import { observer, inject } from "mobx-react";
 import { configure } from "mobx";
 
 import Title from "../layout/Title";
-// // import { navbarItems } from "../../../data/data";
 import tabs from "../tabs/tabs";
+
 configure({ enforceActions: true });
 
 const TabPane = Tabs.TabPane;
@@ -31,9 +31,9 @@ class ReportScreen extends React.Component<Props> {
       <Layout>
         <div>
           <Title
-            title={"Title of Report"}
-            subTitle={" (IRN: Will autogenerate a number once saved)"}
-            complete = {this.props.reportStore.isComplete}
+            title="Title of Report"
+            subTitle="(IRN: Will autogenerate a number once saved)"
+            complete={this.props.reportStore.isComplete}
           />
           <Tabs activeKey={currentTab} onChange={this.onChangeTab}>
             {Object.keys(tabs).map(tab => {

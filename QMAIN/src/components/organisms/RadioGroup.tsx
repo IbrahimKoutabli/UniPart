@@ -21,47 +21,23 @@ interface Props {
 @inject("reportStore")
 @observer
 export default class RadioGroups extends React.Component<Props> {
-  //  children = this.props.reportStore.radioDetails.map(
-  //         (title: string, index: number) => {
-  //           return (
-  //             <Radio key={index.toString()} value={index}>
-  //               {title}
-  //             </Radio>
-  //           );
-  //         }
-  //       );
-  state = {
-    set: false
-  };
   onChange = (e: any) => {
-  this.props.reportStore.basicDetails.setRadioButton(e.target.value)
+    this.props.reportStore.basicDetails.setRadioButton(e.target.value);
   };
   render() {
-    const { reportStore } = this.props
+    const { reportStore } = this.props;
     return (
       <StyledRadioGroup onChange={this.onChange} defaultValue={null}>
-      {reportStore.basicDetails.radioButtons.map((title: string, index: number)=>{
-        return <Radio key={index.toString()} value={index}>{title}</Radio> // no way to manually reset radio buttons
-      })}
-           
-       </StyledRadioGroup>
+        {reportStore.basicDetails.radioButtons.map(
+          (title: string, index: number) => {
+            return (
+              <Radio key={index.toString()} value={index}>
+                {title}
+              </Radio>
+            ); // no way to manually reset radio buttons
+          }
+        )}
+      </StyledRadioGroup>
     );
   }
 }
-// const RadioGroups = inject("reportStore")(
-//   observer(store => {
-//     console.log("how many", store);
-//     const children = store.reportStore.radioDetails.map(
-//       (title: string, index: number) => {
-//         return (
-//           <Radio key={index.toString()} value={index}>
-//             {title}
-//           </Radio>
-//         );
-//       }
-//     );
-//     return <StyledRadioGroup onChange={onChange}>{children}</StyledRadioGroup>;
-//   })
-// );
-
-// export default RadioGroups;
